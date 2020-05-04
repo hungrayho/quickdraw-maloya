@@ -1,5 +1,6 @@
 from google.cloud import storage
 
+
 def download_blob(bucket_name, source_blob_name, destination_file_name):
     """Downloads a blob from the bucket."""
     # bucket_name = "your-bucket-name"
@@ -12,10 +13,4 @@ def download_blob(bucket_name, source_blob_name, destination_file_name):
     blob = bucket.blob(source_blob_name)
     blob.download_to_filename(destination_file_name)
 
-    print(
-        "Blob {} downloaded to {}.".format(
-            source_blob_name, destination_file_name
-        )
-    )
-
-# todo: gcs auth
+    print(f"Blob {source_blob_name} downloaded to {destination_file_name}.")
